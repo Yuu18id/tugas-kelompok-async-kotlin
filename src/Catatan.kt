@@ -7,13 +7,26 @@ class PengelolaCatatan {
         daftarCatatan.add(catatan)
     }
 
+    fun tampilkanCatatan() {
+        println("\nDaftar Catatan")
+        for (catatan in daftarCatatan) {
+            println("\nJudul\t: ${catatan.judul}")
+            println("Isi\t\t: ${catatan.isi}")
+        }
+    }
+}
+
 fun main() {
     // Debugging punya Haidar, boleh dihapus
-    /*
-    val note = Catatan("Judul Catatan", "Isi Catatan")
-    fun tampilkanCatatan (catatan: Catatan): String {
-        return "${catatan.judul}"
-    }
-    println(tampilkanCatatan(note))
-    */
+
+    val pengelolaCatatan = PengelolaCatatan()
+
+    val note1 = Catatan("Sarapan", "Menu sarapan pagi ini adalah bubur ayam")
+    val note2 = Catatan("Mudik", "Lusa akan mudik ke ngawi")
+
+    pengelolaCatatan.tambahCatatan(note1)
+    pengelolaCatatan.tambahCatatan(note2)
+
+    pengelolaCatatan.tampilkanCatatan()
+
 }
